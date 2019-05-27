@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% load static %}
+
+
+<p style="text-align:center; color:red">일기 작성중이에오 집중하세오</p>
+<form method="post" enctype="multipart/form-data" action="{% url 'create' %}" novalidate>
+    {% csrf_token%} 
+    Title: <input type="text" class="form-control" name="title"><br>
+    Image: <input type="file" name="image" size="50" maxlength="50"><br>
+    Body: <textarea class="form-control" rows="5" name="body"></textarea><br>
+    <br>
+    <input class="btn btn-dark" type="submit" value="제출">
+</form>
+
+{% endblock %}
